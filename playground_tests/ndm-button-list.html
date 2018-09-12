@@ -37,11 +37,6 @@
 	<td>initial</td>
 </tr>
 <tr>
-	<td>echo</td>
-	<td>${initial}</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=btn1</td>
 	<td></td>
@@ -53,13 +48,13 @@
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>storedVars['initial']!=storedVars['final']</td>
+	<td>&quot;${initial}&quot;!=&quot;${final}&quot;</td>
 	<td>true</td>
 </tr>
 <tr>
-	<td>echo</td>
-	<td>${final}</td>
-	<td></td>
+	<td>storeAttribute</td>
+	<td>id=btn2@class</td>
+	<td>initial</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -67,9 +62,39 @@
 	<td></td>
 </tr>
 <tr>
+	<td>storeAttribute</td>
+	<td>id=btn2@class</td>
+	<td>final</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${initial}&quot;==&quot;${final}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>id=btn3@class</td>
+	<td>initial</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=btn3</td>
 	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>id=btn3@class</td>
+	<td>final</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${initial}&quot;!=&quot;${final}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>id=btn4@class</td>
+	<td>initial</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -77,11 +102,35 @@
 	<td></td>
 </tr>
 <tr>
+	<td>storeAttribute</td>
+	<td>id=btn4@class</td>
+	<td>final</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${initial}&quot;!=&quot;${final}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>id=btn5@class</td>
+	<td>initial</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>id=btn5</td>
 	<td></td>
 </tr>
-
+<tr>
+	<td>storeAttribute</td>
+	<td>id=btn5@class</td>
+	<td>final</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${initial}&quot;==&quot;${final}&quot;</td>
+	<td>true</td>
+</tr>
 </tbody></table>
 </body>
 </html>
