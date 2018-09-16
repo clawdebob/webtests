@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>ndm-multi-input-table</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ndm-multi-input-table</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[26]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[1]/td[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[2]/td[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[3]/td[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>name=key</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[4]/td[3]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>name=key</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=key</td>
+	<td>field</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[4]/td[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[4]/td[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[4]/td[1]/div</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${text}&quot;==&quot;field&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[3]/td[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=key</td>
+	<td>new field</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[3]/td[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[3]/td[1]/div</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${text}&quot;==&quot;new field&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[2]/td[3]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[2]/td[1]/div</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${text}&quot;==&quot;new field&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div[2]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.modal__body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@name=''])[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/div</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
