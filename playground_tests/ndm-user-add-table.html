@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>ndm-user-add-table</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ndm-user-add-table</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[48]/div/h2/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=apps.ftp.add-user-text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>name=newuser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>name=newpass</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=apps.ftp.add-user-text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=newuser</td>
+	<td>superuser</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=newpass</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=addUserButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>text=*superuser*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=apps.ftp.add-user-text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=newuser</td>
+	<td>superuser</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[50]</td>
+	<td>user1</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[51]</td>
+	<td>user2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>button=Удалить всех пользователей*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>button=Удалить всех пользователей*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>text=*${user1}*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>text=*${user2}*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>text=*superuser*</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
