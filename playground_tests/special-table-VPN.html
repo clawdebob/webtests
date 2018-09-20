@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>special-table-VPN</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">special-table-VPN</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[55]/div/h2/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=vpn-l2tp-access0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotChecked</td>
+	<td>id=vpn-l2tp-access0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=vpn-l2tp-access1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyChecked</td>
+	<td>id=vpn-l2tp-access1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=vpn-l2tp-access2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotChecked</td>
+	<td>id=vpn-l2tp-access2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-admin</td>
+	<td>not ip</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-admin</td>
+	<td>1.1.1.758</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-admin</td>
+	<td>192.168.0.41</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-someOtherUser</td>
+	<td>not ip</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-someOtherUser</td>
+	<td>1.1.1.758</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-someOtherUser</td>
+	<td>192.168.0.5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-thirdUser</td>
+	<td>not ip</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-thirdUser</td>
+	<td>1.1.1.758</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=static-ip-thirdUser</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
