@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>ndm-iface-ppp</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ndm-iface-ppp</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>text=ndm-iface-ppp</td>
+	<td></td>
+</tr>
+<!--PPPoE-->
+<tr>
+	<td>select</td>
+	<td>//*[@id=&quot;sb-8&quot;]/input</td>
+	<td>PPPoE</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[53]/p/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-pppidentity</td>
+	<td>пользователь</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-pppidentity</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-ppppassword</td>
+	<td>ПАРОЛЬ</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-ppppassword</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=iface-ppp.show*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>//*[@id=&quot;sb-9&quot;]/input</td>
+	<td>pap</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[53]/div[3]/ndm-details/div/div[2]/div/div/div/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-pppservice</td>
+	<td>service</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-ppppppoePeer</td>
+	<td>peer</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>//*[@id=&quot;sb-10&quot;]/input</td>
+	<td>static</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[53]/div[3]/ndm-details/div/div[2]/div[4]/fieldset/div/div/div/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-ip</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-ip</td>
+	<td>456</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-ip</td>
+	<td>4001.123.253.23</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-ip</td>
+	<td>128.123.253.23</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-remoteIp</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-remoteIp</td>
+	<td>456</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-remoteIp</td>
+	<td>4001.123.253.23</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-remoteIp</td>
+	<td>192.123.253.23</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns0</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns0</td>
+	<td>456</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns0</td>
+	<td>4001.123.253.23</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns0</td>
+	<td>8.8.8.8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns1</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns1</td>
+	<td>456</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns1</td>
+	<td>4001.123.253.23</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns1</td>
+	<td>4.4.4.4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns2</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns2</td>
+	<td>456</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns2</td>
+	<td>4001.123.253.23</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-dns2</td>
+	<td>5.5.5.5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-mtu</td>
+	<td>45</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=pppip-mtu</td>
+	<td>800</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=pppip-IPv6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyChecked</td>
+	<td>id=pppip-IPv6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=pppip-tcpmss</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyChecked</td>
+	<td>id=pppip-tcpmss</td>
+	<td></td>
+</tr>
+<!--PPTP-->
+<tr>
+	<td>select</td>
+	<td>//*[@id=&quot;sb-8&quot;]/input</td>
+	<td>PPTP</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[53]/p/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-pppaddress</td>
+	<td>567,8</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=errors*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=ndm-iface-pppaddress</td>
+	<td>192.168.1.41</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=ndm-iface-pppmppe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyChecked</td>
+	<td>id=ndm-iface-pppmppe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=ndm-iface-pppccp</td>
+	<td></td>
+</tr>
+<!--Проверка старых значений-->
+<tr>
+	<td>verifyChecked</td>
+	<td>id=pppip-IPv6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyChecked</td>
+	<td>id=pppip-tcpmss</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-ip</td>
+	<td>adress</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-remoteIp</td>
+	<td>remote</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-dns0</td>
+	<td>dns1</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-dns1</td>
+	<td>dns2</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-dns2</td>
+	<td>dns3</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-mtu</td>
+	<td>mtu</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>//*[@id=&quot;sb-9&quot;]/input</td>
+	<td>algo</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>//*[@id=&quot;sb-10&quot;]/input</td>
+	<td>mode</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${adress}&quot;</td>
+	<td>128.123.253.23</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${remote}&quot;</td>
+	<td>192.123.253.23</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${dns1}&quot;</td>
+	<td>8.8.8.8</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${dns2}&quot;</td>
+	<td>4.4.4.4</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${dns3}&quot;</td>
+	<td>5.5.5.5</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${mtu}&quot;</td>
+	<td>800</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${mode}&quot;</td>
+	<td>static</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${algo}&quot;</td>
+	<td>pap</td>
+</tr>
+<!--L2TP-->
+<tr>
+	<td>select</td>
+	<td>//*[@id=&quot;sb-8&quot;]/input</td>
+	<td>L2TP</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[53]/p/span/span</td>
+	<td></td>
+</tr>
+<!--Проверка старых значений-->
+<tr>
+	<td>verifyChecked</td>
+	<td>id=pppip-IPv6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyChecked</td>
+	<td>id=pppip-tcpmss</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=ndm-iface-pppccp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-ip</td>
+	<td>adress</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-remoteIp</td>
+	<td>remote</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-dns0</td>
+	<td>dns1</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-dns1</td>
+	<td>dns2</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-dns2</td>
+	<td>dns3</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>name=pppip-mtu</td>
+	<td>mtu</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>//*[@id=&quot;sb-9&quot;]/input</td>
+	<td>algo</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>//*[@id=&quot;sb-10&quot;]/input</td>
+	<td>mode</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${adress}&quot;</td>
+	<td>128.123.253.23</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${remote}&quot;</td>
+	<td>192.123.253.23</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${dns1}&quot;</td>
+	<td>8.8.8.8</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${dns2}&quot;</td>
+	<td>4.4.4.4</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${dns3}&quot;</td>
+	<td>5.5.5.5</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${mtu}&quot;</td>
+	<td>800</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${mode}&quot;</td>
+	<td>static</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${algo}&quot;</td>
+	<td>pap</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
