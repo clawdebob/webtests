@@ -27,38 +27,43 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[17]/div/h2/span</td>
+	<td>scrollIntoView</td>
+	<td>text=ndm-input-drop</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[18]/div[2]/div/div[1]/input</td>
+	<td>name=inputDrop</td>
 	<td>1000</td>
 </tr>
 <tr>
-	<td>waitForVisible</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[18]/div[2]/div/div[2]/label</td>
-	<td></td>
+	<td>storeText</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[18]/div[2]/div/div[2]/label</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${text}&quot;</td>
+	<td>errors.ports.notInMbRange</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[18]/div[2]/div/div[1]/input</td>
+	<td>name=inputDrop</td>
 	<td>10</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=span.sb-value.ng-scope</td>
-	<td></td>
+	<td>select</td>
+	<td>//*[@id=&quot;sb-6&quot;]/input</td>
+	<td>kb</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id=&quot;sb-6&quot;]/ul/li[1]/a</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[17]/p/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[18]/div[2]/div/div[1]/input</td>
+	<td>name=inputDrop</td>
 	<td>val</td>
 </tr>
 <tr>
@@ -68,37 +73,27 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.sb-value.ng-scope</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//*[@id=&quot;sb-6&quot;]/ul/li[1]/a</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[18]/div[2]/div/div[2]/label</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[17]/p/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[18]/div[2]/div/div[1]/input</td>
+	<td>name=inputDrop</td>
 	<td>1024</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=span.sb-value.ng-scope</td>
-	<td></td>
+	<td>select</td>
+	<td>//*[@id=&quot;sb-6&quot;]/input</td>
+	<td>mb</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id=&quot;sb-6&quot;]/ul/li[2]/a</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[17]/div/h2/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>storeValue</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[18]/div[2]/div/div[1]/input</td>
+	<td>name=inputDrop</td>
 	<td>val</td>
 </tr>
 <tr>
@@ -106,7 +101,6 @@
 	<td>${val}==1</td>
 	<td>true</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
