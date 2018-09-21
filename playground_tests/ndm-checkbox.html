@@ -32,34 +32,24 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=label.checkbox__label</td>
+	<td>check</td>
+	<td>id=ndm-checkbox-example</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>id=ndm-checkbox-example@value</td>
-	<td>final</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${final}&quot;</td>
-	<td>true</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=label.checkbox__label</td>
+	<td>verifyChecked</td>
+	<td>id=ndm-checkbox-example</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>id=ndm-checkbox-example@value</td>
-	<td>final</td>
+	<td>uncheck</td>
+	<td>id=ndm-checkbox-example</td>
+	<td></td>
 </tr>
 <tr>
-	<td>verifyEval</td>
-	<td>&quot;${final}&quot;</td>
-	<td>false</td>
+	<td>verifyNotChecked</td>
+	<td>id=ndm-checkbox-example@value</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -69,16 +59,6 @@
 <tr>
 	<td>waitForVisible</td>
 	<td>css=div.baloon__body.ng-scope</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[5]/div[2]/div[2]/div/div/div[2]/div/div/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[5]/div[2]/div[2]/div/div/div[2]/div/p/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -97,26 +77,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>storeAttribute</td>
-	<td>id=ndm-checkbox-another-example@value</td>
-	<td>initial</td>
-</tr>
-<tr>
-	<td>click</td>
+	<td>verifyNotEditable</td>
 	<td>id=ndm-checkbox-another-example</td>
 	<td></td>
 </tr>
-<tr>
-	<td>storeAttribute</td>
-	<td>id=ndm-checkbox-another-example@value</td>
-	<td>final</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${initial}&quot;==&quot;${final}&quot;</td>
-	<td>true</td>
-</tr>
-
 </tbody></table>
 </body>
 </html>
