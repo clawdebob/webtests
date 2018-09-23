@@ -27,13 +27,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[30]/div/h2/span</td>
+	<td>scrollIntoView</td>
+	<td>text=ndm-ports-range</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[9]</td>
+	<td>button=Переключить режим*</td>
 	<td></td>
 </tr>
 <tr>
@@ -43,7 +43,7 @@
 </tr>
 <tr>
 	<td>verifyVisible</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[32]/div[2]/label</td>
+	<td>text=*ports-range.wrong-range*</td>
 	<td></td>
 </tr>
 <tr>
@@ -53,7 +53,7 @@
 </tr>
 <tr>
 	<td>verifyVisible</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[32]/div[2]/label</td>
+	<td>text=*ports-range.invalid*</td>
 	<td></td>
 </tr>
 <tr>
@@ -63,12 +63,12 @@
 </tr>
 <tr>
 	<td>verifyNotVisible</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[32]/div[2]/label</td>
+	<td>text=*ports-range.invalid*</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[9]</td>
+	<td>button=Переключить режим*</td>
 	<td></td>
 </tr>
 <tr>
@@ -76,7 +76,6 @@
 	<td>name=portTo</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
