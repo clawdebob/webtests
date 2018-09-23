@@ -27,28 +27,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[26]/div</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[1]/td[1]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[2]/td[1]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[3]/td[1]</td>
+	<td>scrollIntoView</td>
+	<td>text=ndm-multi-input-table</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>button=Добавить поле</td>
 	<td></td>
 </tr>
 <tr>
@@ -58,7 +43,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[4]/td[3]/span</td>
+	<td>text=multi-input-table.cancel</td>
 	<td></td>
 </tr>
 <tr>
@@ -68,7 +53,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='button'])[5]</td>
+	<td>button=Добавить поле</td>
 	<td></td>
 </tr>
 <tr>
@@ -78,27 +63,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[4]/td[2]/span</td>
+	<td>text=multi-input-table.apply</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[4]/td[1]</td>
+	<td>text=*field</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[4]/td[1]/div</td>
-	<td>text</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${text}&quot;==&quot;field&quot;</td>
-	<td>true</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[3]/td[2]/span</td>
+	<td>button=Добавить поле</td>
 	<td></td>
 </tr>
 <tr>
@@ -108,55 +83,39 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[3]/td[2]/span</td>
+	<td>text=multi-input-table.apply</td>
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[3]/td[1]/div</td>
-	<td>text</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${text}&quot;==&quot;new field&quot;</td>
-	<td>true</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[2]/td[3]/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>//*[@id=&quot;ndm-page-view&quot;]/div[1]/div/div/div[1]/div/div/div[2]/div/form/div[27]/div[1]/table/tbody/tr[2]/td[1]/div</td>
-	<td>text</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${text}&quot;==&quot;new field&quot;</td>
-	<td>true</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div[2]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=div.modal__body</td>
+	<td>verifyElementPresent</td>
+	<td>text=*new field*</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[20]</td>
+	<td>//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[27]/div/table/tbody/tr[5]/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>text=*new field*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=multi-input-table.flush</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>button=confirm</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyVisible</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[27]/div/div</td>
+	<td>text=multi-input-table.empty-message</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
