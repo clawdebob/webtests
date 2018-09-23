@@ -27,13 +27,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[24]/div/h2/span</td>
+	<td>scrollIntoView</td>
+	<td>text=ndm-modal</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[3]</td>
+	<td>button=Показать предупреждение</td>
 	<td></td>
 </tr>
 <tr>
@@ -43,7 +43,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[20]</td>
+	<td>button=OK</td>
 	<td></td>
 </tr>
 <tr>
@@ -53,7 +53,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[4]</td>
+	<td>button=Показать диалоговое окно*</td>
 	<td></td>
 </tr>
 <tr>
@@ -63,7 +63,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[20]</td>
+	<td>button=confirm</td>
 	<td></td>
 </tr>
 <tr>
@@ -72,18 +72,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[25]/div/div[2]/span/span</td>
-	<td>text</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${text}&quot;==&quot;Да&quot;</td>
-	<td>true</td>
+	<td>verifyVisible</td>
+	<td>text=Да</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[4]</td>
+	<td>button=Показать диалоговое окно*</td>
 	<td></td>
 </tr>
 <tr>
@@ -93,7 +88,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//div/div/div[2]/a/span</td>
+	<td>text=cancel</td>
 	<td></td>
 </tr>
 <tr>
@@ -102,14 +97,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>storeText</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[25]/div/div[2]/span/span</td>
-	<td>text</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${text}&quot;==&quot;Нет&quot;</td>
-	<td>true</td>
+	<td>verifyVisible</td>
+	<td>text=Нет</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>
