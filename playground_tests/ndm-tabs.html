@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>ndm-tabs</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ndm-tabs</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>text=ndm-tabs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>button=Добавить вкладку</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=*{T9}*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.tabs-list__add-tab-btn.ng-scope</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=*{T10}*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=*T10*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>text=ndm-iface-ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=T10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=*changed to tab {T10}*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=*T6*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=*changed to tab {T6}*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>text=ndm-iface-ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=T6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=*...*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=H</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>text=ndm-iface-ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=H</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>button=Удалить случайную вкладку</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>text=*removed*</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
