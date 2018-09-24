@@ -27,8 +27,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>sendKeys</td>
-	<td>//div[@id='ndm-page-view']/div/div/div/div/div/div/div[2]/div/form/div[34]/div/h2/span</td>
+	<td>scrollIntoView</td>
+	<td>text=ndm-radio</td>
 	<td></td>
 </tr>
 <tr>
@@ -48,7 +48,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@name=''])[12]</td>
+	<td>button=Заблокировать/разблокировать</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,7 +71,21 @@
 	<td>(&quot;${a}&quot;==&quot;${b}&quot;)==(&quot;${c}&quot;==&quot;disabled&quot;)</td>
 	<td>true</td>
 </tr>
-
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=ndm-radio-exampleA</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=ndm-radio-exampleB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=ndm-radio-exampleC</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
