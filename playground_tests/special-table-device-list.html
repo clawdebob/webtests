@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>special-table-device-list</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">special-table-device-list</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>text=Еще один пример специальной таблицы (Список устройств)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=xubuntu-ndm</td>
+	<td>pos1</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=opx</td>
+	<td>pos2</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=another-wifi-device</td>
+	<td>pos3</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=test-test</td>
+	<td>pos4</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=ololo</td>
+	<td>pos5</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.playground-wrapper .page-playground .table-from-devices-list .icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=xubuntu-ndm</td>
+	<td>posa1</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=opx</td>
+	<td>posa2</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=another-wifi-device</td>
+	<td>posa3</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=test-test</td>
+	<td>posa4</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=ololo</td>
+	<td>posa5</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa1}&quot;&lt;&quot;${posa2}&quot;&lt;&quot;${posa3}&quot;&lt;&quot;${posa4}&quot;&lt;&quot;${posa5}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.playground-wrapper .page-playground .table-from-devices-list .icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=xubuntu-ndm</td>
+	<td>posa1</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=opx</td>
+	<td>posa2</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=another-wifi-device</td>
+	<td>posa3</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=test-test</td>
+	<td>posa4</td>
+</tr>
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>text=ololo</td>
+	<td>posa5</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa1}&quot;==&quot;${pos1}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa2}&quot;==&quot;${pos2}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa3}&quot;==&quot;${pos3}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa4}&quot;==&quot;${pos4}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa5}&quot;==&quot;${pos5}&quot;</td>
+	<td>true</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
