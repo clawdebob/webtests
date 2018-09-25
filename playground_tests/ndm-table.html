@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>ndm-table</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ndm-table</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://localhost:3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>text=ndm-table</td>
+	<td></td>
+</tr>
+<tr>
+	<td>scrollIntoView</td>
+	<td>css=.ndm-table--row </td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.ndm-table thead .icon--indicator-sortIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.ndm-table thead .icon--indicator-sortIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-0:nth(3)</td>
+	<td>nposa</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-0:nth(4)</td>
+	<td>nposb</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-0:nth(5)</td>
+	<td>nposc</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-1:nth(3)</td>
+	<td>nposd</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-1:nth(4)</td>
+	<td>npose</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-1:nth(5)</td>
+	<td>nposf</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-2:nth(3)</td>
+	<td>nposx</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-2:nth(4)</td>
+	<td>nposy</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-2:nth(5)</td>
+	<td>nposz</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposa}&quot;==&quot;xxx&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposb}&quot;==&quot;ddd&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposc}&quot;==&quot;aaa&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposd}&quot;==&quot;yyy&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${npose}&quot;==&quot;eee&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposf}&quot;==&quot;bbb&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposx}&quot;==&quot;zzz&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposy}&quot;==&quot;fff&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposz}&quot;==&quot;ccc&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.ndm-table thead .icon--indicator-sortIcon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-0:nth(3)</td>
+	<td>nposa</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-0:nth(4)</td>
+	<td>nposb</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-0:nth(5)</td>
+	<td>nposc</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-1:nth(3)</td>
+	<td>nposd</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-1:nth(4)</td>
+	<td>npose</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-1:nth(5)</td>
+	<td>nposf</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-2:nth(3)</td>
+	<td>nposx</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-2:nth(4)</td>
+	<td>nposy</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.table__col-2:nth(5)</td>
+	<td>nposz</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposa}&quot;==&quot;aaa&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposb}&quot;==&quot;ddd&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposc}&quot;==&quot;xxx&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposd}&quot;==&quot;bbb&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${npose}&quot;==&quot;eee&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposf}&quot;==&quot;yyy&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposx}&quot;==&quot;ccc&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposy}&quot;==&quot;fff&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${nposz}&quot;==&quot;zzz&quot;</td>
+	<td>true</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
