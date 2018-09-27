@@ -13,7 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>setSpeed</td>
-	<td>1000</td>
+	<td>500</td>
 	<td></td>
 </tr>
 <tr>
@@ -22,8 +22,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>5000</td>
+	<td>waitForElementPresent</td>
+	<td>css=span.loading__line</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=span.loading__line</td>
 	<td></td>
 </tr>
 <tr>
@@ -68,7 +73,7 @@
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>(&quot;${a}&quot;==&quot;${b}&quot;)==(&quot;${c}&quot;==&quot;disabled&quot;)</td>
+	<td>(&quot;${a}&quot;==&quot;disabled&quot;)==(&quot;${b}&quot;==&quot;disabled&quot;)==(&quot;${c}&quot;==&quot;disabled&quot;)</td>
 	<td>true</td>
 </tr>
 <tr>
