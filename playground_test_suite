@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="playground_tests/ndm-button.html">ndm-button</a></td></tr>
+<tr><td><a href="playground_tests/ndm-button-list.html">ndm-button-list</a></td></tr>
+<tr><td><a href="playground_tests/ndm-checkbox.html">ndm-checkbox</a></td></tr>
+<tr><td><a href="playground_tests/ndm-checkbox-list.html">ndm-checkbox-list</a></td></tr>
+<tr><td><a href="playground_tests/ndm-details.html">ndm-details</a></td></tr>
+<tr><td><a href="playground_tests/ndm-input.html">ndm-input</a></td></tr>
+<tr><td><a href="playground_tests/ndm-input-drop.html">ndm-input-drop</a></td></tr>
+<tr><td><a href="playground_tests/ndm-input-file.html">ndm-input-file</a></td></tr>
+<tr><td><a href="playground_tests/ndm-list.html">ndm-list</a></td></tr>
+<tr><td><a href="playground_tests/ndm-meter.html">ndm-meter</a></td></tr>
+<tr><td><a href="playground_tests/ndm-modal.html">ndm-modal</a></td></tr>
+<tr><td><a href="playground_tests/ndm-multi-input-table.html">ndm-multi-input-table</a></td></tr>
+<tr><td><a href="playground_tests/ndm-notification.html">ndm-notification</a></td></tr>
+<tr><td><a href="playground_tests/ndm-popup.html">ndm-popup</a></td></tr>
+<tr><td><a href="playground_tests/ndm-port-row.html">ndm-port-row</a></td></tr>
+<tr><td><a href="playground_tests/ndm-ports-range.html">ndm-ports-range</a></td></tr>
+<tr><td><a href="playground_tests/ndm-progress-bar.html">ndm-progress-bar</a></td></tr>
+<tr><td><a href="playground_tests/ndm-radio.html">ndm-radio</a></td></tr>
+<tr><td><a href="playground_tests/ndm-selectbox.html">ndm-selectbox</a></td></tr>
+<tr><td><a href="playground_tests/ndm-selectbox-filter.html">ndm-selectbox-filter</a></td></tr>
+<tr><td><a href="playground_tests/ndm-socket.html">ndm-socket</a></td></tr>
+<tr><td><a href="playground_tests/ndm-table.html">ndm-table</a></td></tr>
+<tr><td><a href="playground_tests/ndm-tabs.html">ndm-tabs</a></td></tr>
+<tr><td><a href="playground_tests/ndm-textarea.html">ndm-textarea</a></td></tr>
+<tr><td><a href="playground_tests/ndm-toggle.html">ndm-toggle</a></td></tr>
+<tr><td><a href="playground_tests/ndm-user-add-table.html">ndm-user-add-table</a></td></tr>
+<tr><td><a href="playground_tests/ndm-iface-ip.html">ndm-iface-ip</a></td></tr>
+<tr><td><a href="playground_tests/ndm-iface-ppp.html">ndm-iface-ppp</a></td></tr>
+<tr><td><a href="playground_tests/ndm-pingcheck.html">ndm-pingcheck</a></td></tr>
+<tr><td><a href="playground_tests/special-table-VPN.html">special-table-VPN</a></td></tr>
+<tr><td><a href="playground_tests/special-table-filter.html">special-table-filter</a></td></tr>
+<tr><td><a href="playground_tests/special-table-FTP.html">special-table-FTP</a></td></tr>
+<tr><td><a href="playground_tests/special-table-device-list.html">special-table-device-list</a></td></tr>
+<tr><td><a href="playground_tests/ndm-save-button.html">ndm-save-button</a></td></tr>
+</tbody></table>
+</body>
+</html>
