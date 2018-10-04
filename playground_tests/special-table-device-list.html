@@ -32,33 +32,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>storeElementPositionTop</td>
-	<td>text=xubuntu-ndm</td>
-	<td>pos1</td>
-</tr>
-<tr>
-	<td>storeElementPositionTop</td>
-	<td>text=opx</td>
-	<td>pos2</td>
-</tr>
-<tr>
-	<td>storeElementPositionTop</td>
-	<td>text=another-wifi-device</td>
-	<td>pos3</td>
-</tr>
-<tr>
-	<td>storeElementPositionTop</td>
-	<td>text=test-test</td>
-	<td>pos4</td>
-</tr>
-<tr>
-	<td>storeElementPositionTop</td>
-	<td>text=ololo</td>
-	<td>pos5</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>css=.playground-wrapper .page-playground .table-from-devices-list .icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -88,7 +68,22 @@
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>&quot;${posa1}&quot;&lt;&quot;${posa2}&quot;&lt;&quot;${posa3}&quot;&lt;&quot;${posa4}&quot;&lt;&quot;${posa5}&quot;</td>
+	<td>&quot;${posa1}&quot;&lt;&quot;${posa2}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa2}&quot;&lt;&quot;${posa3}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa3}&quot;&lt;&quot;${posa4}&quot;</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${posa4}&quot;&lt;&quot;${posa5}&quot;</td>
 	<td>true</td>
 </tr>
 <tr>
@@ -97,9 +92,14 @@
 	<td></td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeElementPositionTop</td>
 	<td>text=xubuntu-ndm</td>
-	<td>posa1</td>
+	<td>posa3</td>
 </tr>
 <tr>
 	<td>storeElementPositionTop</td>
@@ -109,41 +109,36 @@
 <tr>
 	<td>storeElementPositionTop</td>
 	<td>text=another-wifi-device</td>
-	<td>posa3</td>
+	<td>posa1</td>
 </tr>
 <tr>
 	<td>storeElementPositionTop</td>
 	<td>text=test-test</td>
-	<td>posa4</td>
+	<td>posa5</td>
 </tr>
 <tr>
 	<td>storeElementPositionTop</td>
 	<td>text=ololo</td>
-	<td>posa5</td>
+	<td>posa4</td>
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>&quot;${posa1}&quot;==&quot;${pos1}&quot;</td>
+	<td>&quot;${posa1}&quot;&lt;&quot;${posa2}&quot;</td>
 	<td>true</td>
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>&quot;${posa2}&quot;==&quot;${pos2}&quot;</td>
+	<td>&quot;${posa2}&quot;&lt;&quot;${posa3}&quot;</td>
 	<td>true</td>
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>&quot;${posa3}&quot;==&quot;${pos3}&quot;</td>
+	<td>&quot;${posa3}&quot;&lt;&quot;${posa4}&quot;</td>
 	<td>true</td>
 </tr>
 <tr>
 	<td>verifyEval</td>
-	<td>&quot;${posa4}&quot;==&quot;${pos4}&quot;</td>
-	<td>true</td>
-</tr>
-<tr>
-	<td>verifyEval</td>
-	<td>&quot;${posa5}&quot;==&quot;${pos5}&quot;</td>
+	<td>&quot;${posa4}&quot;&lt;&quot;${posa5}&quot;</td>
 	<td>true</td>
 </tr>
 </tbody></table>
