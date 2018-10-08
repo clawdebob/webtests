@@ -1,8 +1,0 @@
----
-LastModifyingUser: fitnesse
-Suites: ui, tests, PlaygroundTests, TearDown
----
-!contents -R2 -g -p -h
-
-| script |
-| stop browser |
