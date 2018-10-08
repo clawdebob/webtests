@@ -1,0 +1,55 @@
+import groovy.io.FileType
+
+apply from: 'convert.gradle'
+
+
+task deleteBuildFolder(type: Delete) {
+	doFirst {
+		println "Deleting ${rootProject.convertDir}"
+		delete rootProject.convertDir
+	}	
+}
+
+
+task build {
+	dependsOn deleteBuildFolder
+	
+	doLast {
+		def dirOut // Current target directory
+		def dirList = [] // List for visited folders
+		
+		// Create output directory
+		new File(convertDir).mkdir()
+		// Root directory to search in subdirectories
+		def directory = new File(srcDir)
+
+		// Search for .html files and convert them into .wiki
+		directory.eachDirRecurse() {  dir ->
+			dir.eachFileMatch ~/.*.html/, {
+				// Get output directory name
+				dirOut = "$convertDir${grace(dir)}"
+				
+				// Create nested directory structure
+				new File(dirOut).mkdirs()
+				
+				// For every directory inside root directory
+				new File(convertDir).eachFileRecurse FileType.DIRECTORIES, {
+					// Create a suite, setUp, and tearDown pages if needed
+					if (!dirList.contains(it)) {
+						dirList << it
+						makeSuite "${-> it}"
+					}
+				}
+				// Create test page (source file, target dir, target file name)
+				makeTest it, dirOut, grace(it)
+			}	
+		}
+	}
+}
+
+// We cant' define wrapper versions for subprojects
+if (rootProject == 'playground-tests') {
+	wrapper {
+		gradleVersion = '4.7'
+	}
+}

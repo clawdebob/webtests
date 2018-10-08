@@ -1,0 +1,56 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmPingcheck
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-pingcheck |
+
+Настройка режима ICMP
+
+| script |
+| ensure | do | select | on | !-//*[@id="sb-11"]/input-! | with | icmp |
+| ensure | do | click | on | text=ndm-pingcheck |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckinterval']-! | with | -12 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckinterval']-! | with | 6 |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckfails']-! | with | 0 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckfails']-! | with | 6 |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckhost']-! | with | 324.12.32.43. |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckhost']-! | with | 2.2.2.2 |
+
+Настройка режима connect
+
+| script |
+| ensure | do | select | on | !-//*[@id="sb-11"]/input-! | with | connect |
+| ensure | do | click | on | !-//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/div[54]/p/span/span-! |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckinterval']-! | with | -12 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckinterval']-! | with | 6 |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckfails']-! | with | 0 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckfails']-! | with | 6 |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckhost']-! | with |  |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckhost']-! | with | 324.12.32.43. |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckhost']-! | with | 2.2.2.2 |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckport']-! | with | -43 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='ndmPingcheckport']-! | with | 8000 |
+| ensure | do | select | on | !-//*[@id="sb-11"]/input-! | with | default |
+| do | verifyNotVisible | on | name=ndmPingcheckinterval |
+| do | verifyNotVisible | on | name=ndmPingcheckfails |
+| do | verifyNotVisible | on | name=ndmPingcheckhost |
+| do | verifyNotVisible | on | name=ndmPingcheckport |
+| ensure | do | select | on | !-//*[@id="sb-11"]/input-! | with | none |

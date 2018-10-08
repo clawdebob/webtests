@@ -1,0 +1,23 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmMeter
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-meter |
+
+Проверка индикатора на сменяемость состояния
+
+| script |
+| $initial= | is | storeAttribute | on | !-css=div.ndm-meter.ng-isolate-scope@level-! |
+| ensure | do | click | on | !-xpath=(//button[@name=''])[2]-! |
+| $final= | is | storeAttribute | on | !-css=div.ndm-meter.ng-isolate-scope@level-! |
+| ensure | do | verifyEval | on | $final!=$initial | with | true |

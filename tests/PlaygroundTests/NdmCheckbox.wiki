@@ -1,0 +1,37 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmCheckbox
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text='ndm-checkbox' |
+
+Проврека первого чекбокса на изменение состояния
+
+| script |
+| ensure | do | check | on | id=ndm-checkbox-example |
+| ensure | do | verifyChecked | on | id=ndm-checkbox-example |
+| ensure | do | uncheck | on | id=ndm-checkbox-example |
+| do | verifyNotChecked | on | !-id=ndm-checkbox-example@value-! |
+
+Проврека нажатия на иконку информации
+
+| script |
+| ensure | do | click | on | css=div.baloon__controller |
+| ensure | do | waitForVisible | on | css=div.baloon__body.ng-scope |
+| ensure | do | verifyElementPresent | on | css=span.baloon__close |
+| ensure | do | click | on | css=span.baloon__close |
+| ensure | do | waitForNotVisible | on | css=div.baloon__body.ng-scope |
+
+Проврека второго чекбокса на невозможноть смены его состояния
+
+| script |
+| do | verifyNotEditable | on | id=ndm-checkbox-another-example |

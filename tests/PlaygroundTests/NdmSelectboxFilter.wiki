@@ -1,0 +1,65 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmSelectboxFilter
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-selectbox-filter |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | Keenetic |
+| ensure | do | click | on | text='Keenetic Plus*' |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | USB |
+| ensure | do | click | on | !-text='UsbModem0'-! |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | USB |
+| ensure | do | click | on | !-text='UsbModem1'-! |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | wifi |
+| ensure | do | click | on | !-text='WifiMaster0*'-! |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | wifi |
+| ensure | do | click | on | !-text='WifiMaster1/Access*'-! |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | wifi |
+| ensure | do | click | on | !-text='WifiMaster1/Wifi*'-! |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | Провайдер |
+| ensure | do | click | on | text='Провайдер 1' |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | Провайдер |
+| ensure | do | click | on | text='Провайдер 2' |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | сеть |
+| ensure | do | click | on | text='Гостевая сеть' |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | сеть |
+| ensure | do | click | on | text='Домашняя сеть' |
+| ensure | do | type | on | !-//input[@name='__label']-! | with | сегмент |
+| ensure | do | click | on | text='Сегмент*' |
+
+Меню с группировкой опций
+
+| script |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | Keenetic |
+| ensure | do | click | on | text='Keenetic Plus*' |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | USB |
+| ensure | do | click | on | !-text='UsbModem0'-! |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | USB |
+| ensure | do | click | on | !-text='UsbModem1'-! |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | wifi |
+| ensure | do | click | on | !-text='WifiMaster0*'-! |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | wifi |
+| ensure | do | click | on | !-text='WifiMaster1/Access*'-! |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | wifi |
+| ensure | do | click | on | !-text='WifiMaster1/Wifi*'-! |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | Провайдер |
+| ensure | do | click | on | text='Провайдер 1' |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | Провайдер |
+| ensure | do | click | on | text='Провайдер 2' |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | сеть |
+| ensure | do | click | on | text='Гостевая сеть' |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | сеть |
+| ensure | do | click | on | text='Домашняя сеть' |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! | with | сегмент |
+| ensure | do | click | on | text='Сегмент*' |
+| ensure | do | click | on | !-xpath=(//button[@name=''])[15]-! |
+| do | verifyNotEditable | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/ndm-selectbox-filter[2]/div/div/div/div/div[1]/label[1]/input-! |

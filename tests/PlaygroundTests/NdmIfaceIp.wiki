@@ -1,0 +1,89 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmIfaceIp
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-iface-ip |
+| ensure | do | click | on | text=iface-ip.show* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns0']-! | with | text |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns0']-! | with | 456 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns0']-! | with | 128.123.253.23 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns1']-! | with | text |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns1']-! | with | 234 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns1']-! | with | 1.1.1.1 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns2']-! | with | text |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns2']-! | with | 123 |
+| ensure | do | waitForVisible | on | text=hints* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns2']-! | with | 2.2.2.2 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipmtu']-! | with | 12 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipmtu']-! | with | 800 |
+| ensure | do | uncheck | on | id=playground-ndm-iface-ipttl |
+| do | verifyNotChecked | on | id=playground-ndm-iface-ipttl |
+| ensure | do | check | on | id=playground-ndm-iface-ipIPv6 |
+| ensure | do | verifyChecked | on | id=playground-ndm-iface-ipIPv6 |
+| ensure | do | click | on | text=iface-ip.hide* |
+| do | verifyNotVisible | on | name=playground-ndm-iface-ipdns0 |
+| do | verifyNotVisible | on | name=playground-ndm-iface-ipdns1 |
+| do | verifyNotVisible | on | name=playground-ndm-iface-ipdns2 |
+| do | verifyNotVisible | on | name=playground-ndm-iface-ipmtu |
+| do | verifyNotVisible | on | id=playground-ndm-iface-ipttl |
+| do | verifyNotVisible | on | id=playground-ndm-iface-ipIPv6 |
+| ensure | do | select | on | !-//*[@id="sb-7"]/input-! | with | static |
+| ensure | do | click | on | text=ndm-iface-ip |
+| ensure | do | click | on | text=iface-ip.show* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipip']-! | with | 1234 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipip']-! | with | 1.1.1.1 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns0']-! | with | text |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns0']-! | with | 456 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns0']-! | with | 128.123.253.23 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns1']-! | with | text |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns1']-! | with | 234 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns1']-! | with | 1.1.1.1 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns2']-! | with | text |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns2']-! | with | 123 |
+| ensure | do | waitForVisible | on | text=hints* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipdns2']-! | with | 2.2.2.2 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipgateway']-! | with | text |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipgateway']-! | with | 123 |
+| ensure | do | waitForVisible | on | text=hints* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipgateway']-! | with | 1.0.0.0 |
+| ensure | do | select | on | !-//*[@id="sb-22"]/input-! | with | 248.0.0.0 |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipmtu']-! | with | 12 |
+| ensure | do | waitForVisible | on | text=errors* |
+| ensure | do | type | on | !-//input[@name='playground-ndm-iface-ipmtu']-! | with | 800 |
+| ensure | do | uncheck | on | id=playground-ndm-iface-ipttl |
+| do | verifyNotChecked | on | id=playground-ndm-iface-ipttl |
+| ensure | do | check | on | id=playground-ndm-iface-ipIPv6 |
+| ensure | do | click | on | text=iface-ip.hide* |
+| ensure | do | verifyChecked | on | id=playground-ndm-iface-ipIPv6 |
+| do | verifyNotVisible | on | name=playground-ndm-iface-ipmtu |
+| do | verifyNotVisible | on | id=playground-ndm-iface-ipttl |
+| do | verifyNotVisible | on | id=playground-ndm-iface-ipIPv6 |
+| ensure | do | select | on | !-//*[@id="sb-7"]/input-! | with | none |
+| do | verifyNotVisible | on | !-//input[@name='playground-ndm-iface-ipdns0']-! |
+| do | verifyNotVisible | on | !-//input[@name='playground-ndm-iface-ipdns1']-! |
+| do | verifyNotVisible | on | !-//input[@name='playground-ndm-iface-ipdns2']-! |
+| do | verifyNotVisible | on | !-//input[@name='playground-ndm-iface-ipip']-! |
+| do | verifyNotVisible | on | !-//input[@name='playground-ndm-iface-ipgateway']-! |

@@ -1,0 +1,37 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, SpecialTableDeviceList
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=Еще один пример специальной таблицы (Список устройств) |
+| ensure | do | click | on | css=.playground-wrapper .page-playground .table-from-devices-list .icon |
+| do | pause | on | 2000 |
+| $posa1= | is | storeElementPositionTop | on | text=xubuntu-ndm |
+| $posa2= | is | storeElementPositionTop | on | text=opx |
+| $posa3= | is | storeElementPositionTop | on | text=another-wifi-device |
+| $posa4= | is | storeElementPositionTop | on | text=test-test |
+| $posa5= | is | storeElementPositionTop | on | text=ololo |
+| ensure | do | verifyEval | on | "$posa1"<"$posa2" | with | true |
+| ensure | do | verifyEval | on | "$posa2"<"$posa3" | with | true |
+| ensure | do | verifyEval | on | "$posa3"<"$posa4" | with | true |
+| ensure | do | verifyEval | on | "$posa4"<"$posa5" | with | true |
+| ensure | do | click | on | css=.playground-wrapper .page-playground .table-from-devices-list .icon |
+| do | pause | on | 2000 |
+| $posa3= | is | storeElementPositionTop | on | text=xubuntu-ndm |
+| $posa2= | is | storeElementPositionTop | on | text=opx |
+| $posa1= | is | storeElementPositionTop | on | text=another-wifi-device |
+| $posa5= | is | storeElementPositionTop | on | text=test-test |
+| $posa4= | is | storeElementPositionTop | on | text=ololo |
+| ensure | do | verifyEval | on | "$posa1"<"$posa2" | with | true |
+| ensure | do | verifyEval | on | "$posa2"<"$posa3" | with | true |
+| ensure | do | verifyEval | on | "$posa3"<"$posa4" | with | true |
+| ensure | do | verifyEval | on | "$posa4"<"$posa5" | with | true |

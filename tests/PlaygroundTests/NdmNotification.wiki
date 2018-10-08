@@ -1,0 +1,39 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmNotification
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 1000 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-notification |
+
+Вызов уведомления об успешном выполнении действия
+
+| script |
+| ensure | do | click | on | text=Показать уведомление об успешном* |
+| ensure | do | waitForVisible | on | css=div.ndm-notification__body-msg--valigned |
+| $text= | is | storeText | on | css=div.ndm-notification__body-msg--valigned > span.ng-scope.ng-binding > span.ng-scope |
+| ensure | do | verifyEval | on | "$text"=="success!" | with | true |
+
+Вызов информационного уведомления
+
+| script |
+| ensure | do | click | on | text=Показать информационное уведомление |
+| ensure | do | waitForVisible | on | css=div.ndm-notification__body-msg--valigned |
+| $text= | is | storeText | on | css=div.ndm-notification__body-msg--valigned |
+| ensure | do | verifyEval | on | "$text"=="info!" | with | true |
+
+Вызов уведомления об ошибке
+
+| script |
+| ensure | do | click | on | text=Показать уведомление об ошибке |
+| ensure | do | waitForVisible | on | css=div.ndm-notification__body-msg--valigned |
+| $text= | is | storeText | on | css=div.ndm-notification__body-msg--valigned |
+| ensure | do | verifyEval | on | "$text"=="error!" | with | true |

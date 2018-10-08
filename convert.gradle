@@ -1,0 +1,264 @@
+import org.apache.commons.io.*
+import java.util.regex.Pattern
+import org.jsoup.*
+import org.jsoup.nodes.*
+import org.jsoup.select.*
+import groovy.io.FileType
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		classpath(
+			['org.apache.commons:commons-io:1.3.2'],
+			['org.jsoup:jsoup:1.11.3']
+		)	
+	}
+}
+
+// Declare it to be able to access it from all methods
+ext.testFile = new File('whatever.txt')
+
+ext.locatorCheck = ["addSelection",
+		"assignId",
+		"click",
+		"check",
+		"doubleClick",
+		"dragdrop",
+		"dragAndDrop",
+		"dragAndDropToObject",
+		"focus",
+		"highlight",
+		"removeSelection",
+		"select",
+		"submit",
+		"type",
+		"typeKeys",
+		"uncheck"]
+
+ext.sortedAccessors_IS = ["AlertPresent",
+		"Checked",
+		"ConfirmationPresent",
+		"CookiePresent",
+		"Editable",
+		"ElementPresent",
+		"Ordered",
+		"PromptPresent",
+		"SomethingSelected",
+		"TextPresent",
+		"Visible"]
+	
+ext.sortedAccessors_GET = ["Alert",
+		"AllButtons",
+		"AllFields",
+		"AllLinks",
+		"AllWindowIds",
+		"AllWindowNames",
+		"AllWindowTitles",
+		"Attribute",
+		"AttributeFromAllWindows",
+		"BodyText",
+		"Confirmation",
+		"Cookie",
+		"CookieByName",
+		"CssCount",
+		"CursorPosition",
+		"ElementHeight",
+		"ElementIndex",
+		"ElementPositionLeft",
+		"ElementPositionTop",
+		"ElementWidth",
+		"Eval",
+		"Expression",
+		"HtmlSource",
+		"Location",
+		"MouseSpeed",
+		"Prompt",
+		"SelectedId",
+		"SelectedIds",
+		"SelectedIndex",
+		"SelectedIndexes",
+		"SelectedLabel",
+		"SelectedLabels",
+		"SelectedValue",
+		"SelectedValues",
+		"SelectOptions",
+		"Speed",
+		"Table",
+		"Text",
+		"Title",
+		"Value",
+		"WhetherThisFrameMatchFrameExpression",
+		"WhetherThisWindowMatchWindowExpression",
+		"XpathCount"]
+
+ext.makeSuite = { dir ->
+	// Split the path
+	def s = dir.split(Pattern.quote(File.separator))
+	
+	// Get suite name (last element)
+	def suiteName = s[-1]
+	
+	// Get parent dir (all except last element)
+	def dirName = dir.substring(0, dir.lastIndexOf(File.separator))
+	
+	// Suite
+	def file = new File("$dirName${File.separator}${suiteName}.wiki")
+	file << """---
+LastModifyingUser: fitnesse
+Suite
+Suites: ui, ${s.join(', ')}
+Test: no
+---
+!contents -R2 -g -p -h\n
+"""
+	// SetUp
+	file = new File("$dir${File.separator}SetUp.wiki")
+	file << """---
+LastModifyingUser: fitnesse
+Suites: ui, ${s.join(', ')}, SetUp
+---
+!contents -R2 -g -p -h\n
+| script | test runner |
+| show | exit value | killall -9 \${browser.executable} |
+
+| script | selenium driver fixture |
+| start browser | \${browser.name} | on url | http://\${device}/ |
+| save screenshot after | error | in folder | \${screenshots.base}/${suiteName} |
+"""
+	// TearDown
+	file = new File("$dir${File.separator}TearDown.wiki")
+	file << """---
+LastModifyingUser: fitnesse
+Suites: ui, ${s.join(', ')}, TearDown
+---
+!contents -R2 -g -p -h\n
+| script |
+| stop browser |
+"""
+}
+
+
+ext.makeTest = { fileToProcess, dirOut, fileOut ->
+	// This is out graceful fitnesse test file
+	testFile = new File("${dirOut}${File.separator}${fileOut}.wiki")
+	println "$fileToProcess >> $testFile"
+
+	// Split the path to get array with tags
+	def s = dirOut.split(Pattern.quote(File.separator))
+	
+	// FitNesse .wiki page header
+	testFile << """---
+LastModifyingUser: fitnesse
+Suites: ui, ${s.join(', ')}, $fileOut
+Test
+---
+!contents -R2 -g -p -h\n
+| script |
+| show | link to screenshots |
+"""
+	
+	Document doc = Jsoup.parse(fileToProcess, 'UTF-8')
+	parseIt(doc.select('html body table tbody'))
+}
+
+
+ext.parseIt = { Node node ->
+	def isTable = false
+	
+    for (int i = 0; i < node.childNodes().size(); i++) {	
+		Node child = node.childNode(i)
+		
+		if (child.nodeName().equals('#comment')) {
+			isTable = false
+			
+			// Write comment to file
+			testFile.withWriterAppend ('UTF-8') { out -> out.println "\n${child.getData()}" }
+		} else if (child.nodeName().equals('tr')) {
+			if (!isTable) {
+				isTable = true
+				
+				// Insert script table header after a comment
+				testFile << '\n| script |\n'
+			}
+			Elements cols = child.select('td')
+			
+			// Convert
+			def line = getSourceForCommand(cols[0].text(), cols[1].text(), cols[2].text())
+			
+			// Write converted string to file
+			testFile.withWriterAppend ('UTF-8') { out -> out.println line }
+		}
+    }
+}
+
+
+ext.escape = { s ->
+	s = s.replaceAll("\\\$\\{(\\w+)\\}", "\\\$\$1")
+	
+	if (s =~ /https?:\\/\\// || s =~ /[A-Z][a-z0-9]+[A-Z]/ || s =~ /[@\\|]/) {
+		return "!-$s-!"
+	}
+	return s
+}
+
+
+ext.getSourceForCommand = { command, target, value ->
+	def name = null
+	def isAccessor = true
+	def replacedCommand = command.replaceFirst(~/^store|assert|verify|waitFor/, '')
+
+	if (sortedAccessors_IS.contains(replacedCommand)) {
+		name = 'is'
+	} else if (sortedAccessors_GET.contains(replacedCommand)) {
+		name = 'get'
+	} else {
+		isAccessor = false
+	}
+	
+	if (command == 'setSpeed') {
+		return "| set step delay to | ${escape(target)} |"
+	}
+	
+	if (command =~ /^store/) {
+		if (value == '') {
+			return "| \$$target= | is | $command |"
+		} else {
+			return "| \$$value= | is | $command | on | ${escape(target)} |"
+		}
+	}
+	
+	if (isAccessor && !(command =~ /^waitFor/)) {
+		if (name == 'is') {
+			return "| ensure | do | $command | on | ${escape(target)} |"
+		} else {
+			return "| ensure | do | $command | on | ${escape(target)} | with | ${escape(value)} |"
+		} 
+	} else if ('type'.equals(command) || 'select'.equals(command)) { //Case#12207 
+		return "| ensure | do | $command | on | ${escape(target)} | with | ${escape(value)} |"
+	} else {
+		return (((locatorCheck.indexOf(command) >= 0) || command =~ /^waitFor/) ? "| ensure " : "") +
+                "| do | $command | on | ${escape(target)}" + (!isAccessor && value == "" || isAccessor && name != "get" ? "" : " | with	| ${escape(value)}") + " |"
+	}
+}	
+
+
+ext.grace = { s ->
+	// Remove extension from the file before grace
+	if (s.isFile()) { 
+		s = FilenameUtils.removeExtension(s.name)
+	} else {
+		// We don't need root directory in our output path
+		s = s.toString()
+		s = s.substring(s.indexOf("${File.separator}"))
+	}
+	
+	// Camel_Case it using Groovy magic. Only first letter is capital.
+	def ret = s.toString().replaceAll(/([a-zA-Z])([a-zA-Z]*)/) { wholeMatch, initialLetter, restOfWord 
+		-> initialLetter.toUpperCase() + restOfWord } 
+	
+	// Remove all (Unicode) characters that are neither letters nor (decimal) digits, excluding path separators
+	ret.replaceAll(~/[^\\\/\p{L}\p{Nd}]+/, '')
+}

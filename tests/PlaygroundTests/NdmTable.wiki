@@ -1,0 +1,60 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmTable
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 1000 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+
+Проверка на сортировку даных во второй таблице
+
+| script |
+| do | scrollIntoView | on | text=ndm-table |
+| do | pause | on | 2000 |
+| ensure | do | click | on | css=.ndm-table thead .icon--indicator-sortIcon |
+| ensure | do | click | on | css=.ndm-table thead .icon--indicator-sortIcon |
+| do | pause | on | 2000 |
+| $nposa= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='0']/td[1]/div-! |
+| $nposb= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='1']/td[1]/div-! |
+| $nposc= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='2']/td[1]/div-! |
+| $nposd= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='0']/td[2]/div-! |
+| $npose= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='1']/td[2]/div-! |
+| $nposf= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='2']/td[2]/div-! |
+| $nposx= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='0']/td[3]/div-! |
+| $nposy= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='1']/td[3]/div-! |
+| $nposz= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='2']/td[3]/div-! |
+| ensure | do | verifyEval | on | "$nposa"=="xxx" | with | true |
+| ensure | do | verifyEval | on | "$nposb"=="ddd" | with | true |
+| ensure | do | verifyEval | on | "$nposc"=="aaa" | with | true |
+| ensure | do | verifyEval | on | "$nposd"=="yyy" | with | true |
+| ensure | do | verifyEval | on | "$npose"=="eee" | with | true |
+| ensure | do | verifyEval | on | "$nposf"=="bbb" | with | true |
+| ensure | do | verifyEval | on | "$nposx"=="zzz" | with | true |
+| ensure | do | verifyEval | on | "$nposy"=="fff" | with | true |
+| ensure | do | verifyEval | on | "$nposz"=="ccc" | with | true |
+| ensure | do | click | on | css=.ndm-table thead .icon--indicator-sortIcon |
+| $nposa= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='0']/td[1]/div-! |
+| $nposb= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='1']/td[1]/div-! |
+| $nposc= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='2']/td[1]/div-! |
+| $nposd= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='0']/td[2]/div-! |
+| $npose= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='1']/td[2]/div-! |
+| $nposf= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='2']/td[2]/div-! |
+| $nposx= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='0']/td[3]/div-! |
+| $nposy= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='1']/td[3]/div-! |
+| $nposz= | is | storeText | on | !-//ndm-table[@sort-name="'bar'"]//tr[@item-idx='2']/td[3]/div-! |
+| ensure | do | verifyEval | on | "$nposa"=="aaa" | with | true |
+| ensure | do | verifyEval | on | "$nposb"=="ddd" | with | true |
+| ensure | do | verifyEval | on | "$nposc"=="xxx" | with | true |
+| ensure | do | verifyEval | on | "$nposd"=="bbb" | with | true |
+| ensure | do | verifyEval | on | "$npose"=="eee" | with | true |
+| ensure | do | verifyEval | on | "$nposf"=="yyy" | with | true |
+| ensure | do | verifyEval | on | "$nposx"=="ccc" | with | true |
+| ensure | do | verifyEval | on | "$nposy"=="fff" | with | true |
+| ensure | do | verifyEval | on | "$nposz"=="zzz" | with | true |

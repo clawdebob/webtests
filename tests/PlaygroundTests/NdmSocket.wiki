@@ -1,0 +1,53 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmSocket
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-socket |
+
+Измение состояний доступных портов
+
+| script |
+| ensure | do | select | on | !-//*[@id="sb-12"]/input-! | with | value=free |
+| ensure | do | click | on | text=ndm-socket |
+| $value= | is | storeAttribute | on | !-//*[@id="sb-12"]/input@value-! |
+| ensure | do | verifyEval | on | "$value"=="free" | with | true |
+| ensure | do | select | on | !-//*[@id="sb-12"]/input-! | with | value=iptv |
+| ensure | do | click | on | text=ndm-socket |
+| $value= | is | storeAttribute | on | !-//*[@id="sb-12"]/input@value-! |
+| ensure | do | verifyEval | on | "$value"=="iptv" | with | true |
+| ensure | do | select | on | !-//*[@id="sb-12"]/input-! | with | value=voip |
+| ensure | do | click | on | text=ndm-socket |
+| $value= | is | storeAttribute | on | !-//*[@id="sb-12"]/input@value-! |
+| ensure | do | verifyEval | on | "$value"=="voip" | with | true |
+| ensure | do | select | on | !-//*[@id="sb-13"]/input-! | with | value=free |
+| ensure | do | click | on | text=ndm-socket |
+| $value= | is | storeAttribute | on | !-//*[@id="sb-13"]/input@value-! |
+| ensure | do | verifyEval | on | "$value"=="free" | with | true |
+| ensure | do | select | on | !-//*[@id="sb-13"]/input-! | with | value=iptv |
+| ensure | do | click | on | text=ndm-socket |
+| $value= | is | storeAttribute | on | !-//*[@id="sb-13"]/input@value-! |
+| ensure | do | verifyEval | on | "$value"=="iptv" | with | true |
+| ensure | do | select | on | !-//*[@id="sb-13"]/input-! | with | value=voip |
+| ensure | do | click | on | text=ndm-socket |
+| $value= | is | storeAttribute | on | !-//*[@id="sb-13"]/input@value-! |
+| ensure | do | verifyEval | on | "$value"=="voip" | with | true |
+
+Проверка занятых портов
+
+| script |
+| $text= | is | storeText | on | !-//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/label[2]/div/div[2]/div-! |
+| ensure | do | verifyEval | on | "$text"=="busy" | with | true |
+| $text= | is | storeText | on | !-//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/label[4]/div/div[2]/div-! |
+| ensure | do | verifyEval | on | "$text"=="busy" | with | true |
+| $text= | is | storeText | on | !-//div[@id='ndm-page-view']/div/div/div/div/div[2]/div/form/label[5]/div/div[2]/div-! |
+| ensure | do | verifyEval | on | "$text"=="busy" | with | true |

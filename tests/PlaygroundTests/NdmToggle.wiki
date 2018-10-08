@@ -1,0 +1,28 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmToggle
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-toggle |
+
+Включение/Выключение первого toggle-button
+
+| script |
+| ensure | do | check | on | id=ndm-toggle-exampletoggle |
+| ensure | do | waitForVisible | on | text=Включено |
+| ensure | do | uncheck | on | id=ndm-toggle-exampletoggle |
+| ensure | do | waitForVisible | on | text=Выключено |
+
+Проверка на невозможность менять 2ой toggle-button
+
+| script |
+| do | verifyNotEditable | on | id=ndm-toggle2-exampletoggle |

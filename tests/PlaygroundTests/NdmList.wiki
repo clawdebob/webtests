@@ -1,0 +1,19 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmList
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-list |
+| ensure | do | verifyElementPresent | on | text=Метка 1 |
+| ensure | do | verifyElementPresent | on | text=Метка 2 |
+| ensure | do | verifyElementPresent | on | text=Текст 1 |
+| ensure | do | verifyElementPresent | on | text=Текст 2 |

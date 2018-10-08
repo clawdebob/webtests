@@ -1,0 +1,27 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmInputFile
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+
+В следующей команде добавить в Value путь к файлу 
+
+| script |
+| ensure | do | type | on | !-//*[@id="ndm-page-view"]/div[1]/div[1]/div/div/div[2]/div/form/span[1]/label/input-! | with | /home/andrew/git/test.txt |
+| do | scrollIntoView | on | text=ndm-input-file |
+
+В следующей команде указать имя файла после text=
+
+| script |
+| ensure | do | verifyElementPresent | on | text=test.txt |
+| ensure | do | click | on | css=span.icon.icon--cancel |
+| do | verifyElementNotPresent | on | text=test.txt |

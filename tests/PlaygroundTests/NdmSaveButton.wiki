@@ -1,0 +1,31 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmSaveButton
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 1000 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+
+Изменение чекбокса
+
+| script |
+| do | scrollIntoView | on | text='ndm-checkbox' |
+| ensure | do | check | on | id=ndm-checkbox-example |
+| ensure | do | verifyVisible | on | css=div.ndm-control-footer__controls |
+
+Проверка сохранения 
+
+| script |
+| ensure | do | click | on | text=save |
+| ensure | do | waitForVisible | on | text=Настройки успешно сохранены |
+| ensure | do | uncheck | on | id=ndm-checkbox-example |
+| ensure | do | verifyVisible | on | css=div.ndm-control-footer__controls |
+| ensure | do | click | on | link=cancel |
+| ensure | do | waitForNotVisible | on | css=div.ndm-control-footer__controls |

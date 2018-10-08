@@ -1,0 +1,37 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmModal
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-modal |
+
+Проверка предупреждения
+
+| script |
+| ensure | do | click | on | text=Показать предупреждение |
+| ensure | do | waitForVisible | on | css=div.modal__body |
+| ensure | do | click | on | text=OK |
+| ensure | do | waitForNotVisible | on | css=div.modal__body |
+
+Проверка диалогового окна с выбором Да/Нет
+
+| script |
+| ensure | do | click | on | text=Показать диалоговое окно* |
+| ensure | do | waitForVisible | on | css=div.modal__body |
+| ensure | do | click | on | text=confirm |
+| ensure | do | waitForNotVisible | on | css=div.modal__body |
+| ensure | do | verifyVisible | on | text=Да |
+| ensure | do | click | on | text=Показать диалоговое окно* |
+| ensure | do | waitForVisible | on | css=div.modal__body |
+| ensure | do | click | on | text=cancel |
+| ensure | do | waitForNotVisible | on | css=div.modal__body |
+| ensure | do | verifyVisible | on | text=Нет |

@@ -1,0 +1,12 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, SetUp
+---
+!contents -R2 -g -p -h
+
+| script | test runner |
+| show | exit value | killall -9 ${browser.executable} |
+
+| script | selenium driver fixture |
+| start browser | ${browser.name} | on url | http://${device}/ |
+| save screenshot after | error | in folder | ${screenshots.base}/PlaygroundTests |

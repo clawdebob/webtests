@@ -1,0 +1,33 @@
+---
+LastModifyingUser: fitnesse
+Suites: ui, tests, PlaygroundTests, NdmInputDrop
+Test
+---
+!contents -R2 -g -p -h
+
+| script |
+| show | link to screenshots |
+
+| script |
+| set step delay to | 500 |
+| do | open | on | !-http://localhost:3000-! |
+| ensure | do | waitForElementNotPresent | on | css=span.loading__line |
+| do | scrollIntoView | on | text=ndm-input-drop |
+
+Проверка поля с выпадающим меню
+
+| script |
+| ensure | do | type | on | name=inputDrop | with | 1000 |
+| $text= | is | storeText | on | !-//div[@class='input-drop__error-container']/label-! |
+| ensure | do | verifyEval | on | "$text" | with | !-errors.ports.notInMbRange-! |
+| ensure | do | type | on | name=inputDrop | with | 10 |
+| ensure | do | select | on | !-//*[@id="sb-6"]/input-! | with | kb |
+| ensure | do | click | on | text=ndm-input-drop |
+| $val= | is | storeValue | on | name=inputDrop |
+| ensure | do | verifyEval | on | $val==10240 | with | true |
+| ensure | do | click | on | text=ndm-input-drop |
+| ensure | do | type | on | name=inputDrop | with | 1024 |
+| ensure | do | select | on | !-//*[@id="sb-6"]/input-! | with | mb |
+| ensure | do | click | on | text=ndm-input-drop |
+| $val= | is | storeValue | on | name=inputDrop |
+| ensure | do | verifyEval | on | $val==1 | with | true |
