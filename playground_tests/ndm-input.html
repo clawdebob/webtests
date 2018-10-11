@@ -40,7 +40,7 @@
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>text=errors*</td>
+	<td>//div[@validation='ascii']//label[@data-translate]</td>
 	<td></td>
 </tr>
 <tr>
@@ -50,7 +50,7 @@
 </tr>
 <tr>
 	<td>waitForNotVisible</td>
-	<td>text=errors*</td>
+	<td>//div[@validation='ascii']//label[@data-translate]</td>
 	<td></td>
 </tr>
 <tr>
@@ -66,7 +66,7 @@
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>text=errors*</td>
+	<td>//div[@validation='password']//label[@data-translate]</td>
 	<td></td>
 </tr>
 <tr>
@@ -76,7 +76,7 @@
 </tr>
 <tr>
 	<td>waitForNotVisible</td>
-	<td>text=errors*</td>
+	<td>//div[@validation='password']//label[@data-translate]</td>
 	<td></td>
 </tr>
 <tr>
@@ -91,7 +91,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>text=show-password</td>
+	<td>//div[@validation='password']//a</td>
 	<td></td>
 </tr>
 <tr>
@@ -117,7 +117,7 @@
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>text=errors*</td>
+	<td>//div[@validation='required']//label[@data-translate]</td>
 	<td></td>
 </tr>
 <tr>
@@ -127,7 +127,7 @@
 </tr>
 <tr>
 	<td>verifyNotVisible</td>
-	<td>text=errors*</td>
+	<td>//div[@validation='required']//label[@data-translate]</td>
 	<td></td>
 </tr>
 <!--Проверка второго поля обязательного к заполнению -->
@@ -142,13 +142,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForVisible</td>
+	<td>//div[@validation='required'][2]//label[@data-translate]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>//div[@validation='required'][2]//input</td>
 	<td>текст</td>
 </tr>
 <tr>
 	<td>verifyNotVisible</td>
-	<td>text=errors*</td>
+	<td>//div[@validation='required'][2]//label[@data-translate]</td>
 	<td></td>
 </tr>
 <tr>

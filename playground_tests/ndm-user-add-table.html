@@ -34,12 +34,12 @@
 <!--Добавление пользователя-->
 <tr>
 	<td>click</td>
-	<td>link=apps.ftp.add-user-text</td>
+	<td>//table[@class='ndm-table user-add-table']//a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>text=cancel</td>
+	<td>//table[@class='ndm-table user-add-table']//div[@class='td-content-wrapper']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -54,7 +54,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=apps.ftp.add-user-text</td>
+	<td>//table[@class='ndm-table user-add-table']//a</td>
 	<td></td>
 </tr>
 <tr>
@@ -79,22 +79,22 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=apps.ftp.add-user-text</td>
+	<td>//table[@class='ndm-table user-add-table']//a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>name=newuser</td>
+	<td>//input[@name='newuser']</td>
 	<td>superuser</td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
-	<td>text=errors*</td>
+	<td>xpath=(//table[@class='ndm-table user-add-table']//label)[1]/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>text=cancel</td>
+	<td>//table[@class='ndm-table user-add-table']//div[@class='td-content-wrapper']/a</td>
 	<td></td>
 </tr>
 <!--Удаление всех пользователей кроме admin-->

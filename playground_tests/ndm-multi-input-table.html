@@ -44,7 +44,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>text=multi-input-table.cancel</td>
+	<td>//div[@ng-model='vm.multiInputTableData']/div/table/tbody/tr[4]/td[3]</td>
 	<td></td>
 </tr>
 <tr>
@@ -64,7 +64,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>text=multi-input-table.apply</td>
+	<td>//div[@ng-model='vm.multiInputTableData']/div/table/tbody/tr[4]/td[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -84,7 +84,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>text=multi-input-table.apply</td>
+	<td>//div[@ng-model='vm.multiInputTableData']/div/table/tbody/tr[4]/td[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -106,17 +106,17 @@
 <!--Удаление таблицы-->
 <tr>
 	<td>click</td>
-	<td>text=multi-input-table.flush</td>
+	<td>//div[@class='ndm-multi-input-table__button-add ng-scope']/a</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>text=confirm</td>
+	<td>xpath=(//button[@name=''])[20]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyVisible</td>
-	<td>text=multi-input-table.empty-message</td>
+	<td>verifyNotVisible</td>
+	<td>//div[@ng-form='subform']/table/tbody/tr</td>
 	<td></td>
 </tr>
 </tbody></table>
