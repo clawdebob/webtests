@@ -28,14 +28,14 @@
 </tr>
 <!--В следующей команде добавить в Value путь к файлу -->
 <tr>
-	<td>type</td>
-	<td>//input[@type='file']</td>
-	<td>/home/andrew/git/test.txt</td>
-</tr>
-<tr>
 	<td>scrollIntoView</td>
 	<td>text=ndm-input-file</td>
 	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//input[@type='file']</td>
+	<td>${playground.file}</td>
 </tr>
 <!--В следующей команде указать имя файла после text=-->
 <tr>
