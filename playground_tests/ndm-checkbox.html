@@ -54,28 +54,23 @@
 </tr>
 <!--Проврека нажатия на иконку информации-->
 <tr>
-	<td>click</td>
-	<td>css=div.baloon__controller</td>
+	<td>mouseOver</td>
+	<td>xpath=(//span[@class='ndm-help__button'])[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>css=div.baloon__body.ng-scope</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>css=span.baloon__close</td>
+	<td>css=div.ndm-help-tooltip__container.ng-scope</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.baloon__close</td>
+	<td>text='ndm-checkbox'</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForNotVisible</td>
-	<td>css=div.baloon__body.ng-scope</td>
+	<td>css=div.ndm-help-tooltip__container.ng-scope</td>
 	<td></td>
 </tr>
 <!--Проврека второго чекбокса на невозможноть смены его состояния-->
