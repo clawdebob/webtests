@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.1.1/" />
+<title>ndm-input</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ndm-input</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${playground.page}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=span.loading__line</td>
+	<td></td>
+</tr>
+<!--Проверка на невозможность редактирования содержимого input-->
+<tr>
+	<td>verifyNotEditable</td>
+	<td>//div[@label='Заблокированное поле']//input[@disabled='disabled']</td>
+	<td></td>
+</tr>
+<!--Проверка поля с ASCII символами-->
+<tr>
+	<td>type</td>
+	<td>//div[@validation='ascii']//input</td>
+	<td>Какой-то текст</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@validation='ascii']//label[@data-translate]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@validation='ascii']//input</td>
+	<td>Some text</td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>//div[@validation='ascii']//label[@data-translate]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>text=Поясняющий текст*</td>
+	<td></td>
+</tr>
+<!--Проверка поля с вводом пароля-->
+<tr>
+	<td>type</td>
+	<td>//div[@validation='password']//input</td>
+	<td>Пароль</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@validation='password']//label[@data-translate]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@validation='password']//input</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>//div[@validation='password']//label[@data-translate]</td>
+	<td></td>
+</tr><tr>
+	<td>storeAttribute</td>
+	<td>//div[@validation='password']//input@type</td>
+	<td>type</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${type}&quot;</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@validation='password']//a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//div[@validation='password']//input@type</td>
+	<td>type</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>&quot;${type}&quot;</td>
+	<td>text</td>
+</tr>
+<!--Проверка первого поля обязательного к заполнению -->
+<tr>
+	<td>type</td>
+	<td>//div[@validation='required'][1]//input</td>
+	<td>some text</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@validation='required'][1]//input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@validation='required']//label[@data-translate]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@validation='required'][1]//input</td>
+	<td>some</td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>//div[@validation='required']//label[@data-translate]</td>
+	<td></td>
+</tr>
+<!--Проверка второго поля обязательного к заполнению -->
+<tr>
+	<td>type</td>
+	<td>//div[@validation='required'][2]//input</td>
+	<td>Какой-то текст</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@validation='required'][2]//input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@validation='required'][2]//label[@data-translate]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//div[@validation='required'][2]//input</td>
+	<td>текст</td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>//div[@validation='required'][2]//label[@data-translate]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=Описание, к*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.ndm-alert__body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=×</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=div.ndm-alert__body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>xpath=(//span[@class='ndm-help__button'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.ndm-help-tooltip__container.ng-scope</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>text=ndm-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=div.ndm-help-tooltip__container.ng-scope</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
